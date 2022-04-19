@@ -1,5 +1,5 @@
 import React from 'react'
-
+import LoginButton from './LoginButton.js';
 function Login() {
   return (
    
@@ -79,7 +79,7 @@ function Login() {
       </div>
 
       <div class="flex items-center justify-between">
-        <p class="text-sm text-gray-500">
+         {/* <p class="text-sm text-gray-500">
           No account?
           <div class="underline" href="">Sign up</div>
         </p>
@@ -89,9 +89,11 @@ function Login() {
           class="inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg"
         >
           Sign in
-        </button>
+        </button> */}
+        <LoginButton/>
       </div>
-    </form>
+    </form> 
+    
   </div>
 
   <div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-screen">

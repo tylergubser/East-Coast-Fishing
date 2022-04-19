@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from "react-router-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
   <Router>
-    <App />
+  <Auth0Provider
+  domain="dev-3suzr9ow.us.auth0.com"
+  clientId="imN9WSS0FMvhq3CAi5OPkzTKj8zva3V3"
+  redirectUri={window.location.origin}>
+   <App />
+  </Auth0Provider>
   </Router>,
   document.getElementById('root')
 );
