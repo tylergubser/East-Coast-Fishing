@@ -6,22 +6,44 @@ import About from "./components/About.js"
 import Map from "./components/Map.js"
 import Footer from "./components/Footer.js";
 import NewCatch from "./components/MyCatch.js";
+import Profile from "./components/Profile.js"
 import { useAuth0 } from "@auth0/auth0-react";
-
+import React, { useEffect, useState } from "react"
 
 
 
 function App() {
 
   const { user, isAuthenticated } = useAuth0();
+  const [isUser, setIsUser] = useState([])
   console.log(user)
   console.log(isAuthenticated)
+
+  //  useEffect(() => {
+  //   fetch(`http://localhost:3000/users`,
+  //   {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       first_name: user.given_name,
+  //       last_name: user.family_name,
+  //       username: user.nickname
+  //       }),
+  //     }) 
+  //     .then((r) => r.json())
+  //     .then((data) => setIsUser(data));
+  // }, []);
+
   return (
     <div className="mb-auto">
       <Navbar />
 
       <Switch>
-
+        <Route exact path="/Profile">
+          <Profile/>
+        </Route>
         <Route exact path="/">
           <Home />
         </Route>

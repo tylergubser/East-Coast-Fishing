@@ -6,7 +6,7 @@ import mapSVG from "./images/mapSVG.svg"
 import hookSVG from "./images/hookSVG.svg"
 import fishSVG from "./images/fishSVG.svg"
 import fishingSVG from "./images/fishingSVG.svg"
-
+import LogoutButton from "./LogoutButton.js"
 
 function Navbar() {
     return (
@@ -53,6 +53,9 @@ function Navbar() {
                             <img src={fishSVG} alt="home icon" className="w-6 h-6 mr-3 " />
                             <NavLink to="/Login">Login</NavLink>
                         </div>
+                    </li>
+                    <li>
+                        <LogoutButton/>
                     </li>
 
                 </ul>
