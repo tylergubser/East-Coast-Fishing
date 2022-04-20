@@ -6,7 +6,7 @@ import WormSVG from "./images/WormSVG.svg"
 
 function MyCard() {
   return (
-    <div className="grid lg:grid-cols-3 gap-10 p-10 ">
+    <div className="grid lg:grid-cols-2 gap-10 p-10 ">
       <div class="relative block bg-black group rounded-lg" href="">
         <img
           class="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75  group-hover:opacity-50 rounded-lg "
@@ -41,7 +41,6 @@ function MyCard() {
                 </div>
                 <div class="sm:inline-flex sm:items-center sm:shrink-0 ">
                   <img src={ScaleSVG} alt="scale icom" className='w-4 h-4 ' />
-
                   <div class="sm:ml-3 mt-1.5 sm:mt-0">
                     <dt>
                       Weight
@@ -220,7 +219,6 @@ function MyCard() {
           </div>
         </div >
       </div >
-      
     </div>
   )
 }
