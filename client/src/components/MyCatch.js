@@ -5,12 +5,22 @@ import Modal from './Modal.js'
 import styled, { keyframes } from "styled-components";
 import { fadeInUp } from 'react-animations'
 
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 
 function MyCatch() {
-  const FadeInUp = styled.div`animation: 3s ${keyframes`${fadeInUp}`}`;
+  const FadeInUp = styled.div`animation: 2s ${keyframes`${fadeInUp}`}`;
+
+  const { user, isAuthenticated, isLoading } = useAuth0();
+    console.log(user)
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
 
   return (
+    
+    isAuthenticated ? (
     <div>
       <main className="profile-page">
         <section className="relative block" style={{ height: "500px" }}>
@@ -56,8 +66,8 @@ function MyCatch() {
                   <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                     <div className="relative">
                       <img
-                        alt="..."
-                        src={Profile}
+                        src={user.picture} 
+                        alt={user.name}
                         className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
                         style={{ maxWidth: "150px" }}
                       />
@@ -72,7 +82,6 @@ function MyCatch() {
                       >
                         {/* Connect */}
                         <Modal />
-                        
                       </button>
                     </div>
                   </div>
@@ -101,13 +110,13 @@ function MyCatch() {
                 </div>
                 <div className="text-center mt-12">
                   <h3 className="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2">
-                    Mr.Whiskers
+                  {user.name}
                   </h3>
                   <div className="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
                     <i className="fas fa-map-marker-alt mr-2 text-lg text-gray-500"></i>{" "}
-                    Austin, Texas
+                    {user.email}
                   </div>
-                  <div className="mb-2 text-gray-700 mt-10">
+                  {/* <div className="mb-2 text-gray-700 mt-10">
                     <i className="fas fa-briefcase mr-2 text-lg text-gray-500"></i>
                     Professional Fish Catcher
                   </div>
@@ -115,7 +124,7 @@ function MyCatch() {
                     <i className="fas fa-university mr-2 text-lg text-gray-500"></i>
                     Hi everyone! im mr.whiskers! ive been fishing for as long as i can remember so i would consider myself pretty good at it! 
                     my favorite type of fish to catch, and eat, is salmon! [this section is for the user to add a little intro about themselves]
-                  </div>
+                  </div> */}
                 </div>
                 <div className="mt-10 py-10 border-t border-gray-300 text-center">
                   <div className="flex flex-wrap justify-center">
@@ -123,10 +132,8 @@ function MyCatch() {
                       <p className="mb-4 text-lg leading-relaxed text-gray-800">
                         {/* card component */}
                         <FadeInUp>
-                        <MyCard />
+                          <MyCard />
                         </FadeInUp>
-              
-
                       </p>
                       <a
                         href="#pablo"
@@ -144,7 +151,44 @@ function MyCatch() {
         </section>
       </main>
     </div>
+    ) 
+    : 
+    <div class="max-w-xl mx-auto text-center h-screen flex items-center justify-center">
+  <h2 class="text-2xl font-bold sm:text-3xl">Create a team</h2>
 
+  <p class="mx-auto mt-4 text-gray-500">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente modi
+    suscipit est ipsum qui nulla.
+  </p>
+
+  <a
+    href=""
+    class="flex items-center justify-between px-5 py-3 mt-8 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 group"
+  >
+    <span class="text-lg font-medium group-hover:text-white">
+      Create a team
+    </span>
+
+    <span
+      class="flex-shrink-0 p-2 ml-4 bg-white border border-blue-600 rounded-full"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-5 h-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M17 8l4 4m0 0l-4 4m4-4H3"
+        />
+      </svg>
+    </span>
+  </a>
+</div>
   )
 }
 

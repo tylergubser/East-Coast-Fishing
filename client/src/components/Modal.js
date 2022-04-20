@@ -19,9 +19,10 @@ function Modal() {
             [e.target.name]: e.target.value
         })
     }
-
+   
     return (
         <div>
+            
             <button
                 className=" gap-2 flex bg-blue-500 active:bg-blue-600  text-white font-bold uppercase text-sm px-3 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
@@ -248,6 +249,7 @@ function Modal() {
                     <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
                 </>
             ) : null}
+           
         </div>
     );
 }

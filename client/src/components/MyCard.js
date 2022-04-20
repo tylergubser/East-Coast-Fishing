@@ -6,7 +6,7 @@ import WormSVG from "./images/WormSVG.svg"
 
 function MyCard() {
   return (
-    <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-10 p-10 ">
+    <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-10 p-10 ">
       {/* first card */}
       <div className="relative block bg-black group rounded-lg" href="">
         <img
@@ -28,11 +28,11 @@ function MyCard() {
                 perferendis hic asperiores quibusdam quidem voluptates doloremque
                 reiciendis nostrum harum. Repudiandae?
               </p>
-              <dl className="flex items-center mt-6 space-x-4 text-sm text-white">
+              <dl className="flex items-center mt-6 space-x-4 text-sm text-white transition-all">
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={PinSVG} alt="scale icom" className='w-4 h-4' />
                   <div class="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt class="">
+                    <dt class="underline">
                       Location
                     </dt>
                     <dd class="font-medium">
@@ -43,7 +43,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0 ">
                   <img src={ScaleSVG} alt="scale icom" className='w-4 h-4 ' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt>
+                    <dt className="underline">
                       Weight
                     </dt>
                     <dd className="font-medium">
@@ -54,7 +54,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={Fish2SVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Fish Caught
                     </dt>
                     <dd className="font-medium">
@@ -65,7 +65,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={WormSVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Bait
                     </dt>
                     <dd className="font-medium">
@@ -104,7 +104,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={PinSVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Location
                     </dt>
                     <dd className="font-medium">
@@ -116,7 +116,7 @@ function MyCard() {
                   <img src={ScaleSVG} alt="scale icom" className='w-4 h-4 ' />
 
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt>
+                    <dt className="underline">
                       Weight
                     </dt>
                     <dd className="font-medium">
@@ -127,7 +127,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={Fish2SVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Fish Caught
                     </dt>
                     <dd className="font-medium">
@@ -138,7 +138,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={WormSVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Bait
                     </dt>
                     <dd class="font-medium">
@@ -177,7 +177,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={PinSVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Location
                     </dt>
                     <dd className="font-medium">
@@ -189,7 +189,7 @@ function MyCard() {
                   <img src={ScaleSVG} alt="scale icom" className='w-4 h-4 ' />
 
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt>
+                    <dt className="underline">
                       Weight
                     </dt>
                     <dd className="font-medium">
@@ -200,7 +200,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={Fish2SVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Fish Caught
                     </dt>
                     <dd className="font-medium">
@@ -211,7 +211,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={WormSVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Bait
                     </dt>
                     <dd className="font-medium">
@@ -249,7 +249,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={PinSVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Location
                     </dt>
                     <dd className="font-medium">
@@ -261,7 +261,7 @@ function MyCard() {
                   <img src={ScaleSVG} alt="scale icom" className='w-4 h-4 ' />
 
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt>
+                    <dt className="underline">
                       Weight
                     </dt>
                     <dd className="font-medium">
@@ -272,7 +272,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={Fish2SVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Fish Caught
                     </dt>
                     <dd className="font-medium">
@@ -283,7 +283,7 @@ function MyCard() {
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">
                   <img src={WormSVG} alt="scale icom" className='w-4 h-4' />
                   <div className="sm:ml-3 mt-1.5 sm:mt-0">
-                    <dt className="">
+                    <dt className="underline">
                       Bait
                     </dt>
                     <dd className="font-medium">
