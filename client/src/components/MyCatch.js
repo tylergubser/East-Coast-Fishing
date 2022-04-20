@@ -153,20 +153,20 @@ function MyCatch() {
     </div>
     ) 
     : 
-    <div class="max-w-xl mx-auto text-center h-screen flex items-center justify-center">
-  <h2 class="text-2xl font-bold sm:text-3xl">Create a team</h2>
+    <div class="max-w-xl mx-auto text-center h-screen flex-col items-center justify-center">
+  <h2 class="text-2xl font-bold sm:text-3xl">Create an account</h2>
 
   <p class="mx-auto mt-4 text-gray-500">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente modi
     suscipit est ipsum qui nulla.
   </p>
 
-  <a
+  <div
     href=""
     class="flex items-center justify-between px-5 py-3 mt-8 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 group"
   >
     <span class="text-lg font-medium group-hover:text-white">
-      Create a team
+      Create an account
     </span>
 
     <span
@@ -187,7 +187,7 @@ function MyCatch() {
         />
       </svg>
     </span>
-  </a>
+  </div>
 </div>
   )
 }
