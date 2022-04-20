@@ -2,8 +2,14 @@ import React from 'react'
 import MyCard from './MyCard'
 import Profile from './images/Profile.jpg'
 import Modal from './Modal.js'
+import styled, { keyframes } from "styled-components";
+import { fadeInUp } from 'react-animations'
+
+
 
 function MyCatch() {
+  const FadeInUp = styled.div`animation: 3s ${keyframes`${fadeInUp}`}`;
+
   return (
     <div>
       <main className="profile-page">
@@ -66,6 +72,7 @@ function MyCatch() {
                       >
                         {/* Connect */}
                         <Modal />
+                        
                       </button>
                     </div>
                   </div>
@@ -114,7 +121,12 @@ function MyCatch() {
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
                       <p className="mb-4 text-lg leading-relaxed text-gray-800">
+                        {/* card component */}
+                        <FadeInUp>
                         <MyCard />
+                        </FadeInUp>
+              
+
                       </p>
                       <a
                         href="#pablo"
