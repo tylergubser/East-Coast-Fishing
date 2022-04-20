@@ -1,23 +1,35 @@
 import React from 'react'
 import LoginButton from './LoginButton.js';
+
+
 function Login() {
+
+ 
   return (
    
 
-<section class="relative flex flex-wrap lg:h-screen lg:items-center">
-  <div class="w-full px-4 py-12 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
-    <div class="max-w-lg mx-auto text-center">
-      <h1 class="text-2xl font-bold sm:text-3xl">Get Fishing Today!</h1>
+<section className="relative flex flex-wrap lg:h-screen lg:items-center">
+  <div className="w-full px-4 py-12 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+    <div className="max-w-lg mx-auto text-center">
+      <h1 className="text-2xl font-bold sm:text-3xl">Get Fishing Today!</h1>
 
-      <p class="mt-4 text-gray-500">
-        Login to view the latest catch amoung fishing enthusiasts and share your latest catch!
+      <p className="mt-4 text-gray-500">
+        Log in or Sign up to view the latest catch amoung fishing enthusiasts and share your latest catch!
       </p>
     </div>
 
-    <form action="" class="max-w-md mx-auto mt-8 mb-0 space-y-4">
-      <div>
-        <label for="email" class="sr-only">User Name</label>
-
+    <form action="" className="max-w-md mx-auto mt-8 mb-0 space-y-4">
+    <div className="flex items-center justify-center">
+        <div
+          className="inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-400 rounded-lg"
+        >
+          
+         <LoginButton/>
+         
+        </div>
+      </div>
+      {/* <div>
+        <label for="user name" class="sr-only">User Name</label>
         <div class="relative">
           <input
             type="text"
@@ -42,9 +54,9 @@ function Login() {
         </svg>
           </span>
         </div>
-      </div>
+      </div> */}
 
-      <div>
+      {/* <div>
         <label for="password" class="sr-only">Password</label>
         <div class="relative">
           <input
@@ -76,22 +88,9 @@ function Login() {
             </svg>
           </span>
         </div>
-      </div>
+      </div> */}
 
-      <div class="flex items-center justify-between">
-         {/* <p class="text-sm text-gray-500">
-          No account?
-          <div class="underline" href="">Sign up</div>
-        </p>
-
-        <button
-          type="submit"
-          class="inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg"
-        >
-          Sign in
-        </button> */}
-        <LoginButton/>
-      </div>
+      
     </form> 
     
   </div>

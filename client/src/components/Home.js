@@ -7,9 +7,7 @@ function Home() {
     <div>
       home
     </div>
-    <div>
-      <Profile/>
-    </div>
+    
   </div>
   )
 }
