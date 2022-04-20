@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import FishOnHookSVG from "./images/FishOnHookSVG.svg"
 
-
 function Modal() {
     const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({
@@ -10,12 +9,9 @@ function Modal() {
         location: "",
         caption: "",
         bait: "",
-        fishBreed:""
+        fishBreed: "",
+        photo: ""
     });
-
-
-
-
 
     function handleChange(e) {
         setFormData({
@@ -25,7 +21,7 @@ function Modal() {
     }
 
     return (
-        <>
+        <div>
             <button
                 className=" gap-2 flex bg-blue-500 active:bg-blue-600  text-white font-bold uppercase text-sm px-3 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
@@ -44,8 +40,8 @@ function Modal() {
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                 {/*header*/}
                                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                                    <h3 className="text-3xl font-semibold">
-                                        Modal Title
+                                    <h3 className="text-3xl font-extralight text-black ">
+                                        Share Your Catch
                                     </h3>
                                     <button
                                         className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -58,24 +54,19 @@ function Modal() {
                                 </div>
                                 {/*body*/}
 
-
-
                                 <div className="relative p-6 flex-auto">
-                                    <div class="w-full md:w-96 md:max-w-full mx-auto">
-                                        <div class="p-6 border border-gray-300 sm:rounded-md">
+                                    <div className="w-full md:w-96 md:max-w-full mx-auto">
+                                        <div className="p-6 border border-gray-300 sm:rounded-md">
                                             <form
-                                                method="POST"
-                                                action="https://herotofu.com/start"
-                                                enctype="multipart/form-data"
                                             >
-                                                <label class="block mb-6">
-                                                    <span class="text-gray-700">Your name</span>
+                                                <label className="block mb-6">
+                                                    <span className="text-gray-700">Your name</span>
                                                     <input
                                                         name="name"
                                                         type="text"
                                                         value={formData.name}
                                                         onChange={handleChange}
-                                                        class="
+                                                        className="
             block
             w-full
             mt-1
@@ -92,14 +83,14 @@ function Modal() {
                                                     />
                                                 </label>
 
-                                                <label class="block mb-6">
-                                                    <span class="text-gray-700">Location</span>
+                                                <label className="block mb-6">
+                                                    <span className="text-gray-700">Location</span>
                                                     <input
                                                         name="location"
                                                         type="text"
                                                         value={formData.location}
                                                         onChange={handleChange}
-                                                        class="
+                                                        className="
             block
             w-full
             mt-1
@@ -134,7 +125,9 @@ function Modal() {
                                                     <input
                                                         name="photo"
                                                         type="file"
-                                                        class="
+                                                        value={formData.photo}
+                                                        onChange={handleChange}
+                                                        className="
             block
             w-full
             mt-1
@@ -146,14 +139,14 @@ function Modal() {
           "
                                                     />
                                                 </label>
-                                                <label class="block mb-6">
-                                                    <span class="text-gray-700">Fish Breed</span>
+                                                <label className="block mb-6">
+                                                    <span className="text-gray-700">Fish Breed</span>
                                                     <input
                                                         name="fishBreed"
                                                         type="text"
                                                         value={formData.fishBreed}
                                                         onChange={handleChange}
-                                                        class="
+                                                        className="
             block
             w-full
             mt-1
@@ -169,14 +162,14 @@ function Modal() {
                                                         placeholder="Salmon"
                                                     />
                                                 </label>
-                                                <label class="block mb-6">
-                                                    <span class="text-gray-700">Bait Used</span>
+                                                <label className="block mb-6">
+                                                    <span className="text-gray-700">Bait Used</span>
                                                     <input
                                                         name="bait"
                                                         type="text"
                                                         value={formData.bait}
                                                         onChange={handleChange}
-                                                        class="
+                                                        className="
             block
             w-full
             mt-1
@@ -192,14 +185,14 @@ function Modal() {
                                                         placeholder="Worm"
                                                     />
                                                 </label>
-                                                <label class="block mb-6">
-                                                    <span class="text-gray-700">Caption</span>
+                                                <label className="block mb-6">
+                                                    <span className="text-gray-700">Caption</span>
                                                     <textarea
                                                         name="caption"
                                                         type="text"
                                                         value={formData.caption}
                                                         onChange={handleChange}
-                                                        class="
+                                                        className="
             block
             w-full
             mt-1
@@ -212,31 +205,23 @@ function Modal() {
             focus:ring-opacity-50
           "
                                                         rows="3"
-                                                        placeholder="Add your caption here!"
+                                                        placeholder="Share more about your catch!"
                                                     ></textarea>
                                                 </label>
 
-                                                <div>
-
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                {/*footer*/}
-                                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                                    <button
-                                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                        type="button"
-                                        onClick={() => setShowModal(false)}
-                                    >
-                                        Close
-                                    </button>
-                                    <button
-                                        type="submit"
-                                        class="
-                        font-bold
+                                                {/*footer*/}
+                                                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                                                    <button
+                                                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                        type="button"
+                                                        onClick={() => setShowModal(false)}
+                                                    >
+                                                        Close
+                                                    </button>
+                                                    <button
+                                                        type="submit"
+                                                        className="
+                             font-bold
                             h-10
                             px-5
                             text-indigo-100
@@ -244,13 +229,18 @@ function Modal() {
                             rounded-lg
                             transition-colors
                             duration-150
+                            uppercase
                             focus:shadow-outline
                             hover:bg-blue-800
                         "
-                                    >
-                                        Submit
-                                    </button>
-
+                                                    >
+                                                    Submit
+                                                    </button>
+                                                </div>
+                                                {/* end of footer */}
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -258,7 +248,7 @@ function Modal() {
                     <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
                 </>
             ) : null}
-        </>
+        </div>
     );
 }
 

@@ -8,8 +8,10 @@ function MyCatch() {
     <div>
       <main className="profile-page">
         <section className="relative block" style={{ height: "500px" }}>
+           {/* this is the header picture, the user should be able to change the header to which ever they want */}
           <div
             className="absolute top-0 w-full h-full bg-center bg-cover"
+            
             style={{
               backgroundImage:
                 "url('https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')"
@@ -104,7 +106,8 @@ function MyCatch() {
                   </div>
                   <div className="mb-2 text-gray-700">
                     <i className="fas fa-university mr-2 text-lg text-gray-500"></i>
-                    University of Meow Meow
+                    Hi everyone! im mr.whiskers! ive been fishing for as long as i can remember so i would consider myself pretty good at it! 
+                    my favorite type of fish to catch, and eat, is salmon! [this section is for the user to add a little intro about themselves]
                   </div>
                 </div>
                 <div className="mt-10 py-10 border-t border-gray-300 text-center">
