@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="mb-auto">
-      <Navbar />
+      <Navbar isAuthenticated={isAuthenticated}/>
 
       <Switch>
         <Route exact path="/Profile">

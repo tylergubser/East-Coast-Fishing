@@ -8,7 +8,7 @@ import fishSVG from "./images/fishSVG.svg"
 import fishingSVG from "./images/fishingSVG.svg"
 import LogoutButton from "./LogoutButton.js"
 
-function Navbar() {
+function Navbar({isAuthenticated}) {
     return (
         <header className="shadow-sm">
             <div
@@ -55,7 +55,8 @@ function Navbar() {
                         </div>
                     </li>
                     <li>
-                        <LogoutButton/>
+                       { isAuthenticated ?  <LogoutButton/> : null }
+                       
                     </li>
 
                 </ul>
