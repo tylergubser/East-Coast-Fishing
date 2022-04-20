@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    has_one :photo
+    has_one_attached :photo
 end
