@@ -1,3 +1,3 @@
 class CatchSerializer < ActiveModel::Serializer
-  attributes :id, :bait, :fish_type, :fish_weight, :user_id
+  attributes :id, :name, :weight, :location, :caption, :bait, :fishBreed, :user_id
 end

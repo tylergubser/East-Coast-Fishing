@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_20_192421) do
+ActiveRecord::Schema.define(version: 2022_04_21_004010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,21 +44,13 @@ ActiveRecord::Schema.define(version: 2022_04_20_192421) do
   end
 
   create_table "catches", force: :cascade do |t|
-    t.string "bait"
-    t.string "fish_type"
-    t.integer "fish_weight"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "photos", force: :cascade do |t|
     t.string "name"
-    t.binary "data"
-    t.string "filename"
-    t.string "mime_type"
-    t.string "user_id"
-    t.string "catch_id"
+    t.integer "weight"
+    t.string "location"
+    t.string "caption"
+    t.string "bait"
+    t.string "fishBreed"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
