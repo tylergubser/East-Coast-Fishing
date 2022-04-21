@@ -6,7 +6,7 @@ import WormSVG from "./images/WormSVG.svg"
 
 function MyCard() {
   return (
-    <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-10 p-10 ">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-10 ">
       {/* first card */}
       <div className="relative block bg-black group rounded-lg" href="">
         <img
