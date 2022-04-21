@@ -200,6 +200,7 @@ function Modal() {
             border-gray-300
             rounded-md
             shadow-sm
+            text-black
             focus:border-indigo-300
             focus:ring
             focus:ring-indigo-200
