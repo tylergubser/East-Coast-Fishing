@@ -4,6 +4,8 @@ import NoAccount from './NoAccount';
 import MyCard from "./MyCard"
 import Loading from './Loading';
 import Modal from './Modal.js'
+import WeatherComponent from "./weather/Weather";
+
 
 
 function Home() {
@@ -70,12 +72,8 @@ function Home() {
             <div className="w-screen md:w-3/4 lg:w-4/5 p-5 md:px-12 lg:24 h-full overflow-x-scroll antialiased">
 
               {/* start of new catch form */}
-              <div className="bg-white w-full shadow rounded-lg p-5 flex-col items-center">
-                
-                  <h1 className='text-[64px] font-thin'>My Feed</h1>
-
-                  <Modal />
-          
+              <div className="bg-gray-300 w-full shadow rounded-lg p-5 flex-col items-center">
+              <WeatherComponent/>
               </div>
               
               {/* end of new catch form */}
