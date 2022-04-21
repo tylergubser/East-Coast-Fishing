@@ -1,2 +1,0 @@
-class Catch < ApplicationRecord
-end
