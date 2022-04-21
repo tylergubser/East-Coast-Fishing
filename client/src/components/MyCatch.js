@@ -27,7 +27,6 @@ function MyCatch() {
             {/* this is the header picture, the user should be able to change the header to which ever they want */}
             <div
               className="absolute top-0 w-full h-full bg-center bg-cover"
-
               style={{
                 backgroundImage:
                   "url('https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')"
@@ -135,13 +134,13 @@ function MyCatch() {
                             <MyCard />
                           </FadeInUp>
                         </p>
-                        <a
+                        {/* <a
                           href="#pablo"
                           className="font-normal text-blue-400"
                           onClick={e => e.preventDefault()}
                         >
                           Edit Profile
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                   </div>
