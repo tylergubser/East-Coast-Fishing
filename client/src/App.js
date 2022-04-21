@@ -16,25 +16,36 @@ function App() {
 
   const { user, isAuthenticated } = useAuth0();
   const [isUser, setIsUser] = useState([])
+  const [loggedIn, setLoggedIn] = useState(false)
   console.log(user)
   console.log(isAuthenticated)
 
-  //  useEffect(() => {
-  //   fetch(`http://localhost:3000/users`,
-  //   {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       first_name: user.given_name,
-  //       last_name: user.family_name,
-  //       username: user.nickname
-  //       }),
-  //     }) 
-  //     .then((r) => r.json())
-  //     .then((data) => setIsUser(data));
-  // }, []);
+  useEffect(() => {
+
+    if (isAuthenticated) {
+
+      fetch(`http://localhost:3000/users`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          first_name: user.given_name,
+          last_name: user.family_name,
+          username: user.nickname
+          }),
+        }) 
+        .then((r) => r.json())
+        .then((data) => setIsUser(data));
+
+      }
+
+
+  },[isAuthenticated, user])
+
+
+
 
   return (
     <div className="mb-auto">
