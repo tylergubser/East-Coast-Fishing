@@ -1,11 +1,12 @@
 import React from 'react'
 import MyCard from './MyCard'
-import Profile from './images/Profile.jpg'
 import Modal from './Modal.js'
 import styled, { keyframes } from "styled-components";
 import { fadeInUp } from 'react-animations'
-import { NavLink } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import NoAccount from './NoAccount';
+import Loading from './Loading';
+
 
 
 
@@ -15,7 +16,7 @@ function MyCatch() {
   const { user, isAuthenticated, isLoading } = useAuth0();
   console.log(user)
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <Loading />;
   }
 
   return (
@@ -127,7 +128,7 @@ function MyCatch() {
                   </div>
                   <div className="mt-10 py-10 border-t border-gray-300 text-center">
                     <div className="flex flex-wrap justify-center">
-                      <div className="w-full lg:w-9/12 px-4">
+                      <div className="px-4">
                         <p className="mb-4 text-lg leading-relaxed text-gray-800">
                           {/* card component */}
                           <FadeInUp>
@@ -153,73 +154,7 @@ function MyCatch() {
     )
       :
       <div >
-        {/* <h2 class="text-2xl font-bold sm:text-3xl">Account Not Found</h2>
-        <p class="mx-auto mt-4 text-gray-500">
-          Please log in or sign up to view your profile and log your catches!
-        </p>
-        <NavLink to="/Login">
-        <div
-          href=""
-          class="animate-bounce flex items-center justify-between px-5 py-3 mt-8  text-blue-600 border border-blue-300 rounded-lg hover:bg-blue-200 group"
-        >
-          <span class=" hover:text-white text-lg font-medium group-hover:text-whiten">
-            <NavLink to="/Login"> Go Fishing 🎣</NavLink>
-          </span>
-          <span
-            class="flex-shrink-0 p-2 ml-4 bg-white border border-blue-600 rounded-full"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </span>
-        </div>
-        </NavLink> */}
-        <section class="relative bg-white">
-          <img
-            class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
-            src="https://images.unsplash.com/photo-1493787039806-2edcbe808750?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="Guy fishing in a lake"
-          />
-
-          <div class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-white sm:to-transparent"></div>
-
-          <div class="relative max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex">
-            <div class="max-w-xl text-center sm:text-left">
-              <h1 class="text-3xl font-extrabold sm:text-5xl">
-                Let's
-                <strong class="font-extrabold text-blue-600 sm:block">
-                  Go Fishing.
-                </strong>
-              </h1>
-
-              <p class="max-w-lg mt-4 sm:leading-relaxed sm:text-xl">
-                Please log in or sign up to view your profile and log your catches.
-              </p>
-
-              <div class="flex flex-wrap gap-4 mt-8 text-center">
-
-                <a class="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-blue-600 sm:w-auto active:bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring" href="/Login">
-                  Get Started
-                </a>
-
-                <a class="block w-full px-12 py-3 text-sm font-medium bg-white rounded shadow text-blue-600 sm:w-auto hover:text-blue-700 active:text-blue-500 hover:bg-gray-100 focus:outline-none focus:ring" href="/about">
-                  Learn More
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <NoAccount />
       </div>
 
   )

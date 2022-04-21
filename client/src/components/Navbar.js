@@ -12,24 +12,19 @@ function Navbar({ isAuthenticated }) {
     return (
         <header className="shadow-sm">
             <div
-                className="flex items-center justify-between space-around h-16 max-w-screen-xl px-4 mx-auto"
+                className="flex items-center justify-between space-around h-16 max-w-screen-xl px-4 mx-auto "
             >
                 <div className="flex flex-1 w-0 lg:hidden sm:text-center">
                     <NavLink to="/">East Coast Fishing Co.</NavLink>
-
                 </div>
-
                 <div className="flex items-center space-x-4">
-
-                    <form className="hidden mb-0 lg:flex">
+                    <div className="hidden mb-0 lg:flex">
                         <NavLink to="/">East Coast Fishing Co.</NavLink>
-                    </form>
+                    </div>
                 </div>
-
                 <ul
                     className="items-center justify-center hidden space-x-8 text-sm font-medium lg:flex lg:flex-1 lg:w-0"
                 >
-
                     <li className="relative">
                         <div className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out">
                             <img src={mapSVG} alt="home icon" className="w-6 h-6 mr-3" />
@@ -48,7 +43,6 @@ function Navbar({ isAuthenticated }) {
                             <NavLink to="/About">About</NavLink>
                         </div>
                     </li>
-
                     <li className="relative">
                         {isAuthenticated
                             ?
@@ -63,9 +57,7 @@ function Navbar({ isAuthenticated }) {
                             </div>
                         }
                     </li>
-
                 </ul>
-
             </div>
 
             {/* mobile view */}
