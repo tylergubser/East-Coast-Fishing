@@ -28,8 +28,8 @@ function MyCard({userData}) {
               <p className="text-sm text-white">
                 {caption}
               </p>
-              <dl className="flex items-center mt-6 space-x-4 text-sm text-white transition-all">
-                <div className="sm:inline-flex sm:items-center sm:shrink-0">
+              <dl className="flex items-center mt-6 space-x-4 text-sm text-white transition-all flex-wrap content-center justify-center">
+                <div className="sm:inline-flex sm:items-center sm:shrink-0 py-3">
                   <img src={PinSVG} alt="scale icom" className='w-4 h-4' />
                   <div class="sm:ml-3 mt-1.5 sm:mt-0">
                     <dt class="underline">
