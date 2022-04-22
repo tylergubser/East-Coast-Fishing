@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { useAuth0 } from "@auth0/auth0-react";
 import NoAccount from './NoAccount';
 import MyCard from "./MyCard"
@@ -12,10 +12,17 @@ function Home() {
   const { user, isAuthenticated, isLoading } = useAuth0();
   console.log(user)
 
+  const [usersData, setUsersDate] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/catches')
+    .then(resp => resp.json())
+    .then(data => setUsersDate(data))
+  },[])
+
   if (isLoading) {
     return <Loading />;
   }
-
 
   return (
     isAuthenticated ? (
@@ -78,7 +85,9 @@ function Home() {
 
               {/* start of card display */}
               <div className="mt-3 text-center">
-                <MyCard />
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-10 ">
+                  {usersData.map(userData => <MyCard userData={userData} key={user.id}/> )}
+                </div>
               </div>
               {/* end of card display */}
             </div>
