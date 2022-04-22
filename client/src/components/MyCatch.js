@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import MyCard from './MyCard'
 import Modal from './Modal.js'
 import styled, { keyframes } from "styled-components";
@@ -11,10 +11,24 @@ import Loading from './Loading';
 
 
 function MyCatch() {
-  const FadeInUp = styled.div`animation: 2s ${keyframes`${fadeInUp}`}`;
 
+  const [catches, setCatches] = useState([])
   const { user, isAuthenticated, isLoading } = useAuth0();
   console.log(user)
+
+  useEffect(() => {
+    if (isAuthenticated) {
+
+    fetch(`http://localhost:4000/catches?username=${user.nickname}`)
+    .then(resp => resp.json())
+    .then(catchData => setCatches(catchData))
+    }
+  },[user])
+
+console.log(catches)
+
+
+
   if (isLoading) {
     return <Loading />;
   }
@@ -129,10 +143,7 @@ function MyCatch() {
                     <div className="flex flex-wrap justify-center">
                       <div className="px-4">
                         <p className="mb-4 text-lg leading-relaxed text-gray-800">
-                          {/* card component */}
-                          <FadeInUp>
-                            <MyCard />
-                          </FadeInUp>
+                            {catches.map(userData => <MyCard userData={userData} key={user.id}/> )}
                         </p>
                         {/* <a
                           href="#pablo"
