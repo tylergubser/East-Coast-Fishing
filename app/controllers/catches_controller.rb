@@ -8,9 +8,7 @@ class CatchesController < ApplicationController
                 Catch.all.with_attached_photo
             end
     
-        render json: catches.map { |catch|
-          catch.as_json.merge({ image: url_for(catch.photo) })
-        }
+        render json: catches
       end
 
       #shows users catches on profile page
@@ -28,14 +26,13 @@ class CatchesController < ApplicationController
         catch.user_id = user.id
         catch.name = user.first_name
         catch.save
-
         render json: catch, status: :created        
       end
 
       private
 
       def catch_params
-        params.permit(:bait, :fishBreed, :weight, :caption, :location,  :user_id)
+        params.permit(:bait, :fishBreed, :weight, :caption, :location,  :user_id, :photo)
       end
 
 end

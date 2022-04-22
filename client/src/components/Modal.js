@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import FishOnHookSVG from "./images/FishOnHookSVG.svg"
 
-function Modal() {
+function Modal({user}) {
     const [showModal, setShowModal] = useState(false);
+    const [imageData, setImageData] = useState([])
     const [formData, setFormData] = useState({
         name: "",
         weight: 0,
@@ -10,15 +11,46 @@ function Modal() {
         caption: "",
         bait: "",
         fishBreed: "",
-        photo: ""
-    });
+    })
 
     function handleChange(e) {
+
+        e.preventDefault();
+
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         })
     }
+
+    function handleImageChange(e) {
+        setImageData({ photo: e.target.files[0]}) 
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+
+        const combinedData = {
+            ...formData,
+            ...imageData,
+            username: user.nickname,
+            image: ""
+        }
+
+        fetch(`http://localhost:3000/catches`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(combinedData),
+          }) 
+          .then((r) => r.json())
+          .then((data) => console.log(data));
+  
+    }
+    
+
    
     return (
         <div>
@@ -58,8 +90,7 @@ function Modal() {
                                 <div className="relative p-6 flex-auto">
                                     <div className="w-full md:w-96 md:max-w-full mx-auto">
                                         <div className="p-6 border border-gray-300 sm:rounded-md">
-                                            <form
-                                            >
+                                            <form onSubmit={(e) => handleSubmit(e)}>
                                                 <label className="block mb-6">
                                                     <span className="text-gray-700">Your name</span>
                                                     <input
@@ -126,8 +157,9 @@ function Modal() {
                                                     <input
                                                         name="photo"
                                                         type="file"
+                                                        accept="image/jpg"
                                                         value={formData.photo}
-                                                        onChange={handleChange}
+                                                        onChange={handleImageChange}
                                                         className="
             block
             w-full

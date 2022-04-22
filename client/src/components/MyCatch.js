@@ -94,7 +94,7 @@ console.log(catches)
                           style={{ transition: "all .15s ease" }}
                         >
                           {/* Connect */}
-                          <Modal />
+                          <Modal user={user}/>
                         </button>
                       </div>
                     </div>
