@@ -1,4 +1,5 @@
 class CatchesController < ApplicationController
+    include Rails.application.routes.url_helpers
 
     def index
         catches = Catch.all.with_attached_photo
@@ -22,7 +23,7 @@ class CatchesController < ApplicationController
       private
 
       def catch_params
-        params.permit(:bait, :fishBreed, :weight, :caption, :location, :photo, :user_id)
+        params.permit(:bait, :fishBreed, :weight, :caption, :location,  :user_id)
       end
 
 end
