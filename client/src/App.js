@@ -42,7 +42,7 @@ function App() {
       }
 
 
-  },[isAuthenticated, user])
+  },[user])
 
 
 
