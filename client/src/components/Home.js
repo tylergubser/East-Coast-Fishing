@@ -37,8 +37,6 @@ function Home() {
                   <img className="border border-indigo-100 shadow-lg rounded-[50%] mx-auto" src={user.picture} alt={user.name} />
                   <div className="pt-2 border-t border-b mt-5 w-full text-center text-xl text-gray-600">
                     {user.name}
-                    <br />
-                    {user.email}
                   </div>
                   <div className=" flex-col justify-center py-4 lg:pt-4 pt-8">
                     <div className="p-3 text-center">
