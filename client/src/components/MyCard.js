@@ -26,7 +26,7 @@ function MyCard({userData}) {
               className="transition-all transform translate-y-8 opacity-0  group-hover:opacity-100 group-hover:translate-y-0"
             >
               <p className="text-sm text-white">
-                {}
+                {caption}
               </p>
               <dl className="flex items-center mt-6 space-x-4 text-sm text-white transition-all">
                 <div className="sm:inline-flex sm:items-center sm:shrink-0">

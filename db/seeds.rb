@@ -55,7 +55,7 @@ end
 puts "Creating catches..."
 200.times do
     fish = fish_type.to_a.sample
-    Catch.create(bait: bait.sample, fishBreed: fish[0], name: User.order("RANDOM()").first.first_name, weight: Faker::Number.between(from: 1, to: 50), caption: Faker::Lorem.sentence, user_id: User.ids.sample, location: "#{Faker::Address.city}, #{Faker::Address.state}").photo.attach(io: File.open(fish[1]), filename: "#{fish[0]}.jpg")
+    Catch.create(bait: bait.sample, fishBreed: fish[0], name: User.order("RANDOM()").first.first_name, weight: Faker::Number.between(from: 1, to: 50), caption: Faker::Lorem.sentence, user_id: User.ids.sample, location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}").photo.attach(io: File.open(fish[1]), filename: "#{fish[0]}.jpg")
 end
 
 
