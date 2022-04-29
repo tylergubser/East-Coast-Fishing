@@ -142,7 +142,7 @@ console.log(catches)
                   <div className="mt-10 py-10 border-t border-gray-300 text-center">
                     <div className="flex flex-wrap justify-center">
                       <div className="px-4">
-                        <p className="mb-4 text-lg leading-relaxed text-gray-800">
+                        <p className="gap-10 grid grid-cols-1 lg:grid-cols-2 mb-4 text-lg leading-relaxed text-gray-800">
                             {catches.map(userData => <MyCard userData={userData} key={user.id}/> )}
                         </p>
                         {/* <a
