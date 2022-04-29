@@ -24,7 +24,7 @@ function Modal({user}) {
     }
 
     function handleImageChange(e) {
-        setImageData({ photo: e.target.files[0]}) 
+        setImageData({ photo: e.target.files[0][0]}) 
     }
 
     function handleSubmit(e) {
@@ -37,6 +37,8 @@ function Modal({user}) {
             image: ""
         }
 
+        console.log(combinedData)
+
         fetch(`http://localhost:3000/catches`,
         {
           method: "POST",
@@ -47,7 +49,7 @@ function Modal({user}) {
           }) 
           .then((r) => r.json())
           .then((data) => console.log(data));
-  
+
     }
     
 

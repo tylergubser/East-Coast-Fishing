@@ -13,6 +13,7 @@ class CatchesController < ApplicationController
 
 
       def create
+        byebug
         user = User.find_by(username: params[:username])
         catch = Catch.create!(catch_params)
         catch.user_id = user.id
@@ -24,7 +25,7 @@ class CatchesController < ApplicationController
       private
 
       def catch_params
-        params.permit(:bait, :fishBreed, :weight, :caption, :location, :user_id, :photo)
+        params.permit(:bait, :fishBreed, :weight, :caption, :location, :user_id, photo: [:file])
       end
 
 end
